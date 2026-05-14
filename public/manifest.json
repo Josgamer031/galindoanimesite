@@ -1,0 +1,79 @@
+{
+  "name": "Galindo Anime - Ver Anime Online",
+  "short_name": "Galindo Anime",
+  "description": "Tu plataforma favorita para ver anime online en español. Explora, descubre y disfruta de los mejores animes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#141519",
+  "theme_color": "#F47521",
+  "prefer_related_applications": false,
+  "categories": ["entertainment", "streaming"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icons/screenshot-540x720.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/screenshot-1080x1440.png",
+      "sizes": "1080x1440",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Explorar Anime",
+      "short_name": "Explorar",
+      "description": "Explora el catálogo completo de anime",
+      "url": "/?view=directory",
+      "icons": [
+        {
+          "src": "/icons/shortcut-explore.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Mis Favoritos",
+      "short_name": "Favoritos",
+      "description": "Ve tus animes favoritos guardados",
+      "url": "/?view=home",
+      "icons": [
+        {
+          "src": "/icons/shortcut-favorites.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

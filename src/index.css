@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-cr-orange: #F47521;
+  --color-cr-orange-dark: #D4621A;
+  --color-cr-orange-light: #FF9A56;
+  --color-cr-yellow: #FFD233;
+  --color-bg-primary: #141519;
+  --color-bg-secondary: #1A1B20;
+  --color-bg-card: #1F2027;
+  --color-bg-card-hover: #282933;
+  --color-bg-elevated: #23242B;
+  --color-surface: #191A1F;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A8;
+  --color-text-muted: #6B6B76;
+  --color-border: rgba(255,255,255,0.06);
+  --color-border-hover: rgba(255,255,255,0.12);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F47521 #141519;
+}
+*::-webkit-scrollbar { width: 5px; height: 5px; }
+*::-webkit-scrollbar-track { background: #141519; }
+*::-webkit-scrollbar-thumb { background: #F47521; border-radius: 10px; }
+
+body {
+  background: radial-gradient(circle at top left, rgba(244,117,33,0.09), transparent 18%),
+              radial-gradient(circle at bottom right, rgba(255,210,51,0.07), transparent 20%),
+              linear-gradient(180deg, #0A0A0D 0%, #141519 100%);
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+body::selection {
+  background: rgba(244,117,33,0.26);
+  color: #FFFFFF;
+}
+
+/* Glass and surface styles */
+.glass-card {
+  background: rgba(17, 18, 24, 0.82);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.30);
+}
+
+.surface-card {
+  background: rgba(25, 26, 31, 0.96);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.accent-button {
+  background: #F47521;
+  color: #FFFFFF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.accent-button:hover {
+  background: #FF7A42;
+  transform: translateY(-1px);
+}
+
+.section-hero {
+  background: linear-gradient(180deg, rgba(8,9,12,0.9) 0%, rgba(8,9,12,0.36) 100%);
+}
+
+.card-border {
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes heroKen {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+.animate-fade-up { animation: fadeUp 0.5s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.5s ease-out forwards; }
+.animate-slide-left { animation: slideInLeft 0.5s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.3s ease-out forwards; }
+.animate-hero-ken { animation: heroKen 20s ease-in-out infinite alternate; }
+.animate-slide-down { animation: slideDown 0.4s ease-out forwards; }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+.skeleton {
+  background: linear-gradient(90deg, #1F2027 25%, #282933 50%, #1F2027 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Content width optimization */
+.app-shell {
+  max-width: 100%;
+}
+
+/* Better scrolling */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Horizontal scroll hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom focus ring */
+:focus-visible {
+  outline: 2px solid #F47521;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Better transitions for all interactive elements */
+button, a, input {
+  transition: all 0.2s ease;
+}
+
+/* Improved image loading */
+img[loading="lazy"] {
+  background: #1F2027;
+}
+
+/* Card improvements */
+.surface-card {
+  will-change: transform;
+}
+
+.surface-card:hover {
+  will-change: auto;
+}
+
+/* Ad blocker utility: hide common ad containers injected into the app */
+.ad-banner,
+.adsbox,
+.ad-unit,
+.adsense,
+.adslot,
+.advertisement,
+.sponsor,
+.ad-container,
+.ad-placeholder,
+.ad-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
