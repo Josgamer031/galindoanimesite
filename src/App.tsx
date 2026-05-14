@@ -8,6 +8,7 @@ import AnimeDetailView from './views/AnimeDetailView';
 import EpisodeView from './views/EpisodeView';
 import DirectoryView from './views/DirectoryView';
 import GenreView from './views/GenreView';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 interface AppState {
   view: View;
@@ -60,6 +61,7 @@ export default function App() {
       <Header onNavigate={navigate} onSearch={search} onGenreClick={openGenre} currentView={state.view} />
       <main>{renderView()}</main>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
